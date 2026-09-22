@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gracie Florals — Editorial + Sculptural Blooms</title>
+  <meta name="description" content="Editorial and sculptural wedding florals in Utah and beyond. Now booking 2027.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FCFCFA;
+      --color-text: #1C1C1C;
+      --color-text-soft: #5A5A56;
+      --color-accent: #6B7F5E;
+      --color-accent-light: #E8ECE4;
+      --color-border: #E2E0DB;
+      --color-cream: #F5F4F0;
+      --font-display: 'Cormorant Garamond', 'Georgia', serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --color-bg: #141413;
+        --color-text: #EAEAE6;
+        --color-text-soft: #9E9E96;
+        --color-accent: #8FA87E;
+        --color-accent-light: #262B23;
+        --color-border: #2E2E2A;
+        --color-cream: #1C1C1A;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --color-bg: #141413;
+      --color-text: #EAEAE6;
+      --color-text-soft: #9E9E96;
+      --color-accent: #8FA87E;
+      --color-accent-light: #262B23;
+      --color-border: #2E2E2A;
+      --color-cream: #1C1C1A;
+    }
+
+    *, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: env(safe-area-inset-top, 0px);
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: calc(env(safe-area-inset-top, 0px) + 20px) 40px 20px;
+      background: var(--color-bg);
+      transition: box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 1px 0 var(--color-border);
+    }
+
+    nav .logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--color-text-soft);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    nav .nav-links a:hover { color: var(--color-text); }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 40px 80px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(48px, 10vw, 120px);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      margin-bottom: 32px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero .tagline {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 400;
+      color: var(--color-text-soft);
+      letter-spacing: 0.04em;
+      margin-bottom: 48px;
+    }
+
+    .hero .cta-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      padding: 14px 36px;
+      background: var(--color-accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: #5A6E4F; }
+
+    .btn-secondary {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      padding: 14px 36px;
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--color-text-soft); }
+
+    /* ---- ABOUT ---- */
+    .about {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 120px 40px;
+      text-align: center;
+    }
+
+    .about .section-label {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-accent);
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+
+    .about p {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    /* ---- GALLERY ---- */
+    .gallery {
+      padding: 40px 40px 120px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      aspect-ratio: 3 / 4;
+      background: var(--color-cream);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item .placeholder-text {
+      font-family: var(--font-display);
+      font-size: 14px;
+      color: var(--color-text-soft);
+      opacity: 0.5;
+      font-style: italic;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---- SERVICES ---- */
+    .services {
+      padding: 120px 40px;
+      background: var(--color-cream);
+    }
+
+    .services-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .services-left .section-label {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-accent);
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+
+    .services-left h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .services-left p {
+      color: var(--color-text-soft);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    .services-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .service-item {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .service-item:first-child {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .service-item h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .service-item p {
+      font-size: 13px;
+      color: var(--color-text-soft);
+    }
+
+    /* ---- BOOKING BANNER ---- */
+    .booking {
+      padding: 120px 40px;
+      text-align: center;
+    }
+
+    .booking h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(36px, 7vw, 72px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .booking h2 em {
+      font-style: italic;
+    }
+
+    .booking p {
+      color: var(--color-text-soft);
+      font-size: 15px;
+      margin-bottom: 40px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      padding: 60px 40px calc(env(safe-area-inset-bottom, 0px) + 60px);
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer .footer-logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--color-text);
+    }
+
+    footer .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    footer .footer-links a {
+      font-size: 13px;
+      color: var(--color-text-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer .footer-links a:hover { color: var(--color-text); }
+
+    footer .footer-note {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: var(--color-text-soft);
+      margin-top: 20px;
+      opacity: 0.6;
+    }
+
+    /* ---- MOBILE ---- */
+    @media (max-width: 768px) {
+      nav { padding: calc(env(safe-area-inset-top, 0px) + 16px) 24px 16px; }
+      nav .nav-links { gap: 20px; }
+      nav .nav-links a { font-size: 12px; }
+
+      .hero { padding: 120px 24px 60px; min-height: 85vh; }
+      .about { padding: 80px 24px; }
+      .gallery { padding: 24px 24px 80px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+
+      .services { padding: 80px 24px; }
+      .services-inner { grid-template-columns: 1fr; gap: 48px; }
+
+      .booking { padding: 80px 24px; }
+
+      footer { padding: 40px 24px calc(env(safe-area-inset-bottom, 0px) + 40px); justify-content: center; text-align: center; }
+      footer .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero .cta-row { flex-direction: column; width: 100%; }
+      .hero .cta-row a { width: 100%; text-align: center; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <a href="#" class="logo">Gracie Florals</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#inquire">Inquire</a></li>
+      <li><a href="https://instagram.com/gracie.florals" target="_blank" rel="noopener">Instagram</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Editorial +<br><em>Sculptural</em><br>Blooms</h1>
+    <p class="tagline">Wedding florals in Utah and beyond</p>
+    <div class="cta-row">
+      <a href="#inquire" class="btn-primary">Inquire about your date</a>
+      <a href="https://instagram.com/gracie.florals" target="_blank" rel="noopener" class="btn-secondary">View on Instagram</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <p class="section-label">The Studio</p>
+    <p>
+      Gracie Florals creates intentional, sculptural floral design
+      for couples who want their wedding flowers to feel like art —
+      not an afterthought. Every arrangement is designed to reflect
+      your vision, your venue, and the atmosphere you're building.
+    </p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="gallery">
+    <div class="gallery-grid">
+      <div class="gallery-item"><span class="placeholder-text">Your photo here</span></div>
+      <div class="gallery-item"><span class="placeholder-text">Your photo here</span></div>
+      <div class="gallery-item"><span class="placeholder-text">Your photo here</span></div>
+      <div class="gallery-item"><span class="placeholder-text">Your photo here</span></div>
+      <div class="gallery-item"><span class="placeholder-text">Your photo here</span></div>
+      <div class="gallery-item"><span class="placeholder-text">Your photo here</span></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="services-inner">
+      <div class="services-left">
+        <p class="section-label">What We Do</p>
+        <h2>Designed for<br>your day</h2>
+        <p>From intimate elopements to full-scale celebrations, every detail is considered and every stem placed with intention.</p>
+      </div>
+      <div class="services-right">
+        <div class="service-item">
+          <h3>Wedding Florals</h3>
+          <p>Full floral design for your ceremony, reception, and wedding party</p>
+        </div>
+        <div class="service-item">
+          <h3>Elopements</h3>
+          <p>Curated arrangements for intimate celebrations</p>
+        </div>
+        <div class="service-item">
+          <h3>Events</h3>
+          <p>Sculptural installations and arrangements for special occasions</p>
+        </div>
+        <div class="service-item">
+          <h3>Editorial</h3>
+          <p>Floral design for styled shoots, publications, and creative projects</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking CTA -->
+  <section class="booking" id="inquire">
+    <h2>Now booking <em>2027</em></h2>
+    <p>Tell us about your vision and we'll be in touch within 48 hours to start planning your florals.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWSY" class="btn-primary" target="_blank" rel="noopener">Start your inquiry</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-logo">Gracie Florals</span>
+    <ul class="footer-links">
+      <li><a href="https://instagram.com/gracie.florals" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="#inquire">Inquire</a></li>
+    </ul>
+    <p class="footer-note">&copy; 2026 Gracie Florals. Utah + beyond.</p>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
